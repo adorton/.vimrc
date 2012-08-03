@@ -1,5 +1,3 @@
-" we don't do that here
-
 call pathogen#infect()
 set nobackup
 
@@ -13,6 +11,7 @@ set hlsearch
 syntax enable
 set background=dark
 colorscheme solarized
+let g:solarized_italic=1
 
 set nu
 
@@ -24,13 +23,18 @@ nmap <C-V> "+gp
 imap <C-V> <ESC><C-V>i
 vmap <C-C> "+y 
 
-let g:solarized_italic=1
+vnoremap < <gv 
+vnoremap > >gv 
+
+nnoremap / /\v 
+vnoremap / /\v
 
 set bs=2
 
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 
-nnoremap <Leader>/ :noh<cr>
-nnoremap <Leader>, :set nolist!<cr>
+nnoremap <silent><Leader>/ :noh<cr>
+nnoremap <silent><Leader>, :set nolist!<cr>
+nnoremap <silent><Leader>. :set wrap! lbr!<CR>
 set transparency=10
